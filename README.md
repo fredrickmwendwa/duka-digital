@@ -102,6 +102,16 @@ Photos live in `public/images/` (`hero.jpg` and `products/<slug>-1.jpg`), croppe
 
 `PaymentPanel` only displays instructions. To add a real integration later, supply a provider that returns the instructions (or starts an STK push) for an order and reports a verified status from a server. Keep the "not verified" wording until a server confirms it.
 
+## Deploy
+
+Live demo: _add your Vercel URL here after the first deploy_
+
+The repo includes `vercel.json` (single-page-app rewrite so `/product/...` and `/checkout/...` links work on refresh, plus cache headers) and a GitHub Actions workflow that builds on every push.
+
+1. Push to GitHub, then import the repo at [vercel.com/new](https://vercel.com/new). Vercel detects Vite: build command `npm run build`, output `dist`.
+2. No environment variables are required. The optional `VITE_*` values in `.env.example` are demo data only. Never add real payment credentials.
+3. Every push to `main` redeploys. Pull requests get preview URLs.
+
 ## Testing
 
 Verified against a production build with headless Chromium:

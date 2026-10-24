@@ -1,0 +1,33 @@
+:root {
+  --paper: #f3f1ea;
+  --surface: #ffffff;
+  --sunk: #e4dfd0;
+  --rule: #d9d3c2;
+  --ink: #14130f;
+  --ink-2: #3a372f;
+  --ink-3: #5a574e;
+  --cobalt: #1f3fd1;
+  --cobalt-dk: #17309f;
+  --cobalt-lt: #7f96ff;
+  --success: #1e6b3f;
+  --warning: #8a5a00;
+  --error: #b3261e;
+
+  --font-text: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px;
+  --radius: 4px;
+  --radius-lg: 12px;
+  --shadow-sheet: 0 -8px 24px rgba(20, 19, 15, 0.12);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --t-fast: 120ms;
+  --t-med: 200ms;
+
+  --pad: 16px;
+  --container: 1200px;
+  --header-h: 64px;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (min-width: 768px) { :root { --pad: 32px; } }
+@media (min-width: 1024px) { :root { --pad: 48px; } }

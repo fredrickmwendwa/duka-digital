@@ -93,6 +93,12 @@ Money formatting, totals and the WhatsApp message each come from one function, s
 
 Every image is a plain `<img>` with `src="/placeholder.svg"`, a fixed 4:5 box and a tinted background. Replace the `images` arrays in `src/data/products.js` with real 4:5 photographs to go live. No external images are used.
 
+### Using real photos (for example from Unsplash)
+
+1. Download photos and save them as `public/images/hero.jpg` and `public/images/products/<slug>-1.jpg` (see `public/images/README.md` for the slugs).
+2. Set `VITE_USE_PHOTOS=true` in `.env`. Set `VITE_PHOTOS_PER_PRODUCT` to how many files each product has (default 1).
+3. Restart `npm run dev`. A missing file falls back to the placeholder, so you can add photos gradually.
+
 ### Replacing the simulation with real payments
 
 `PaymentPanel` only displays instructions. To add a real integration later, supply a provider that returns the instructions (or starts an STK push) for an order and reports a verified status from a server. Keep the "not verified" wording until a server confirms it.

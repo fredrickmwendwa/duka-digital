@@ -1,9 +1,16 @@
+import { config } from '../config';
+
 // Demonstration catalog. Prices are whole KSh. `tone` tints the placeholder image box.
 // Replace `images` with real photography (4:5 portrait) when available.
 const IMG = '/placeholder.svg';
-const images = (n = 4) => Array.from({ length: n }, () => IMG);
+// With VITE_USE_PHOTOS=true: /images/products/<slug>-1.jpg, -2.jpg ... Otherwise the placeholder.
+const images = (slug) => (config.photos
+  ? Array.from({ length: config.photosPerProduct }, (_, i) => `/images/products/${slug}-${i + 1}.jpg`)
+  : Array.from({ length: 4 }, () => IMG));
 const sizes = (...stocks) => ['XS', 'S', 'M', 'L', 'XL'].slice(0, stocks.length).map((label, i) => ({ label, stock: stocks[i] }));
 const OS = [{ label: 'One size', stock: 14 }];
+
+export const heroImage = config.photos ? '/images/hero.jpg' : IMG;
 
 export const categories = [
   { slug: 'dresses', name: 'Dresses' },
@@ -61,7 +68,7 @@ export const products = [
     colours: [{ name: 'Natural', swatch: '#d9c9a3', tone: '#d6cbb0' }], sizes: [{ label: 'One size', stock: 2 }],
     description: 'Hand-woven sisal market bag with leather handles. Each bag varies slightly.',
     details: 'Sisal and leather. 34 x 30 x 14 cm. Wipe clean.' },
-].map((p) => ({ ...p, images: images() }));
+].map((p) => ({ ...p, images: images(p.slug) }));
 
 export const getProduct = (slug) => products.find((p) => p.slug === slug);
 export const unitPrice = (p) => p.salePrice ?? p.price;

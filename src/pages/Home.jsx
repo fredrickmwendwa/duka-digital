@@ -4,7 +4,7 @@ import Picture from '../components/Picture';
 import ProductCard from '../components/ProductCard';
 import { GridSkeleton } from '../components/Skeletons';
 import { useSimulatedLoad } from '../hooks/useSimulatedLoad';
-import { categories, products } from '../data/products';
+import { categories, heroImage, products } from '../data/products';
 import { config } from '../config';
 import styles from './Home.module.css';
 
@@ -29,7 +29,7 @@ export default function Home() {
             <Button to="/shop" variant="secondary">Browse all</Button>
           </div>
         </div>
-        <Picture src="/placeholder.svg" alt="Model wearing a sand linen wrap dress" tone="#d8cdb6" ratio="5 / 4" eager caption="Photo 5:4 hero" />
+        <Picture src={heroImage} alt="Model wearing a sand linen wrap dress" tone="#d8cdb6" ratio="5 / 4" eager caption="Photo 5:4 hero" />
       </section>
 
       <nav aria-label="Categories" className={styles.cats}>

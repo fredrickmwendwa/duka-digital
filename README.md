@@ -30,7 +30,7 @@ More desktop screens: [product](screenshots/d-product.png), [cart](screenshots/d
 
 - **Discovery:** home, catalog with search, category, price, size and in-stock filters, four sort orders, "Load more" paging, and URL-backed filters you can share.
 - **Mobile filter sheet:** a bottom sheet on phones and tablets, a sticky sidebar from 1024px.
-- **Product pages:** swipeable gallery on phones, thumbnails on desktop, colour and size chips, sold-out sizes struck through and labelled, stock messages, quantity stepper, a sticky add-to-cart bar on phones, delivery and payment information, related products.
+- **Product pages:** swipeable gallery (when a product has several photos), thumbnails on desktop, colour and size chips, sold-out sizes struck through and labelled, stock messages, quantity stepper, a sticky add-to-cart bar on phones, delivery and payment information, related products.
 - **Cart:** drawer plus full page, quantity limits from stock, remove with Undo, delivery or collection choice, totals that recalculate instantly, persisted on the device.
 - **Checkout:** no account, inline and summary validation, Kenyan phone formats (07xx, 01xx, +254), entries preserved on error.
 - **M-Pesa simulation:** Till or Paybill (configurable), exact amount, order reference, copy buttons with a manual fallback, numbered steps, "I have sent the payment" only changes the message to "reported by customer, not verified".
@@ -84,20 +84,19 @@ src/
   pages/        Home, Catalog, Product, Cart, Checkout, Payment, Review, Help, NotFound
   styles/       tokens.css, global.css
   utils/        format (KSh), phone, order totals, validation, WhatsApp message, storage
-public/placeholder.svg   transparent placeholder used for every image src
+public/images/            compressed product photos and hero
+public/placeholder.svg    fallback image
 ```
 
 Money formatting, totals and the WhatsApp message each come from one function, so the cart, checkout, M-Pesa panel and message cannot disagree.
 
 ### Images
 
-Every image is a plain `<img>` with `src="/placeholder.svg"`, a fixed 4:5 box and a tinted background. Replace the `images` arrays in `src/data/products.js` with real 4:5 photographs to go live. No external images are used.
+Photos live in `public/images/` (`hero.jpg` and `products/<slug>-1.jpg`), cropped to 4:5 (hero 5:4), 1200 px wide, JPEG, about 60 to 230 KB each (2.2 MB in total). Every image is a plain `<img>` with fixed `width`/`height`, an aspect-ratio box and a tinted background, so layout never jumps while it loads. If a file is missing or fails to load, the `<img>` falls back to `/placeholder.svg`.
 
-### Using real photos (for example from Unsplash)
-
-1. Download photos and save them as `public/images/hero.jpg` and `public/images/products/<slug>-1.jpg` (see `public/images/README.md` for the slugs).
-2. Set `VITE_USE_PHOTOS=true` in `.env`. Set `VITE_PHOTOS_PER_PRODUCT` to how many files each product has (default 1).
-3. Restart `npm run dev`. A missing file falls back to the placeholder, so you can add photos gradually.
+- Set `VITE_USE_PHOTOS=false` to show placeholders only.
+- Each product has one photo (`VITE_PHOTOS_PER_PRODUCT=1`). Add `<slug>-2.jpg` and so on and raise the value to get a gallery with thumbnails and swipe dots.
+- Selecting another colour does not change the photo yet. Colour-specific photos would need a per-colour image map in `src/data/products.js`.
 
 ### Replacing the simulation with real payments
 
@@ -122,6 +121,28 @@ Not tested: real phones, Safari and Firefox, screen readers (VoiceOver, TalkBack
 - **Honest wording is a feature.** "Pending, not verified" and "Your order is not sent yet" cost nothing and prevent the worst misunderstanding in a simulated flow.
 - **Accessible dialogs are work.** Focus trapping, focus return, scroll locking and animated exit needed one shared `Overlay` so the drawer, menu, search and filter sheet behave the same.
 - **Measure, do not guess.** Scripted overflow and tap-target sweeps found real problems (cramped cart rows, small links) that were invisible by eye.
+
+## Photo credits
+
+Photos are from [Unsplash](https://unsplash.com) and used under the [Unsplash License](https://unsplash.com/license). Thanks to the photographers:
+
+| Used for | Photographer (Unsplash) | Photo |
+| --- | --- | --- |
+| Hero | Look Studio | [3X996UkCFB8](https://unsplash.com/photos/3X996UkCFB8) |
+| Woven Market Bag | Tamaki Kato | [7croK2-BiVQ](https://unsplash.com/photos/7croK2-BiVQ) |
+| Graphic Baby Tee | Michael Kyule | [KU9_66FzOGU](https://unsplash.com/photos/KU9_66FzOGU) |
+| Puff Sleeve Linen Dress | Lance Reis | [3PPi3lZnq3s](https://unsplash.com/photos/3PPi3lZnq3s) |
+| Linen Shirt Dress | Mohsen Ameri | [o_35WZTGvtU](https://unsplash.com/photos/o_35WZTGvtU) |
+| Structured Blazer | Ola Szkolda | [m3bGCKMqDhM](https://unsplash.com/photos/m3bGCKMqDhM) |
+| Oversized Shirt | tr-ng-tuy-t-ly | [rvYAJd7ZpPo](https://unsplash.com/photos/rvYAJd7ZpPo) |
+| Midi Slip Skirt | Liviu Boldis | [myWZQ5FHn9k](https://unsplash.com/photos/myWZQ5FHn9k) |
+| Ribbed Knit Top | Brunxs | [7V9YalsQYA4](https://unsplash.com/photos/7V9YalsQYA4) |
+| Canvas Tote | Tereza Ruba | [TK-rrTgYqzo](https://unsplash.com/photos/TK-rrTgYqzo) |
+| Wide Leg Trousers | Shyngyskhan Tatubayev | [RR4RmQ-3cp0](https://unsplash.com/photos/RR4RmQ-3cp0) |
+| Cotton Tee | Avtar Singh | [8ACmRoleM24](https://unsplash.com/photos/8ACmRoleM24) |
+| Linen Wrap Dress | Jeffery Erhunse | [mPHPraJk-eA](https://unsplash.com/photos/mPHPraJk-eA) |
+
+The photos show different garments than the demo product names in some cases, so product names, colours and descriptions were adjusted to match what is visible. Photographer names come from the downloaded file names, so check them on each photo page.
 
 ## Limitations
 

@@ -29,7 +29,7 @@ export default function Home() {
             <Button to="/shop" variant="secondary">Browse all</Button>
           </div>
         </div>
-        <Picture src={heroImage} alt="Model wearing a sand linen wrap dress" tone="#d8cdb6" ratio="5 / 4" eager caption="Photo 5:4 hero" />
+        <Picture src={heroImage} alt="Smiling woman in a taupe cotton tee carrying a canvas tote" tone="#d8cdb6" ratio="5 / 4" eager />
       </section>
 
       <nav aria-label="Categories" className={styles.cats}>

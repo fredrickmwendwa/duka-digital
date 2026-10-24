@@ -1,0 +1,8 @@
+.field { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 56px; border-bottom: 1px solid var(--rule); }
+.label { font-size: 14px; line-height: 20px; }
+.right { display: inline-flex; align-items: center; gap: 10px; flex: none; }
+.value { font: 700 18px/24px var(--font-mono); user-select: all; }
+.btn { min-height: 44px; min-width: 44px; padding: 0 14px; border: 2px solid var(--ink); border-radius: var(--radius); background: transparent; font: 600 14px/20px var(--font-text); transition: background var(--t-fast), color var(--t-fast); }
+.btn:hover { background: var(--ink); color: var(--paper); }
+.ok { border-color: var(--success); color: var(--success); background: transparent; }
+.ok:hover { background: transparent; color: var(--success); }

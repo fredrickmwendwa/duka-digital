@@ -1,0 +1,8 @@
+.head { display: flex; justify-content: space-between; align-items: center; padding: 0 4px 0 16px; min-height: 56px; border-bottom: 2px solid var(--ink); font-size: 20px; letter-spacing: -0.02em; }
+.close { width: 44px; height: 44px; border: 0; background: none; font-size: 30px; line-height: 1; }
+.list { overflow-y: auto; }
+.row { display: flex; justify-content: space-between; align-items: center; min-height: 56px; padding: 0 16px; border-bottom: 1px solid var(--rule); font: 500 20px/28px var(--font-text); transition: background var(--t-fast); }
+.row:hover { background: var(--sunk); }
+.row span:last-child { font-size: 13px; color: var(--ink-3); }
+.help { padding: 16px; display: flex; flex-direction: column; }
+.foot { margin-top: auto; padding: 16px calc(16px + 0px) calc(16px + var(--safe-bottom)); border-top: 2px solid var(--ink); background: var(--surface); }

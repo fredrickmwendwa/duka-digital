@@ -1,0 +1,9 @@
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.label { font: 500 14px/20px var(--font-text); }
+.optional { font-weight: 400; color: var(--ink-3); }
+.control { width: 100%; min-height: 48px; padding: 11px 12px; border: 1px solid var(--ink-3); border-radius: var(--radius); background: var(--surface); font-size: 16px; line-height: 24px; transition: border-color var(--t-fast); resize: vertical; }
+.control:hover { border-color: var(--ink); }
+.control:focus-visible { border-color: var(--cobalt); outline-offset: 0; }
+.invalid { border: 2px solid var(--error); padding: 10px 11px; }
+.hint { font-size: 13px; line-height: 18px; color: var(--ink-3); }
+.error { font: 500 14px/20px var(--font-text); color: var(--error); }

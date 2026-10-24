@@ -1,0 +1,17 @@
+.gallery { display: grid; gap: 0; min-width: 0; }
+.thumbs { display: none; }
+.stage { min-width: 0; }
+.strip { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.strip::-webkit-scrollbar { display: none; }
+.slide { flex: 0 0 100%; scroll-snap-align: start; }
+.dots { display: flex; justify-content: center; gap: 6px; padding: 10px; }
+.dots i { width: 8px; height: 8px; background: #b9b6ae; transition: background var(--t-fast); }
+.dots .dotOn { background: var(--ink); }
+@media (min-width: 1024px) {
+  .gallery { grid-template-columns: 72px minmax(0, 1fr); gap: 24px; align-items: start; }
+  .thumbs { display: flex; flex-direction: column; gap: 12px; }
+  .thumb { padding: 0; border: 1px solid #5a574e55; background: none; }
+  .thumb.on { border: 2px solid var(--ink); }
+  .strip { overflow: hidden; scroll-snap-type: none; }
+  .dots { display: none; }
+}

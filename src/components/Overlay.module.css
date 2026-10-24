@@ -1,0 +1,10 @@
+.root { position: fixed; inset: 0; z-index: 100; }
+.backdrop { position: absolute; inset: 0; background: rgba(20, 19, 15, 0.45); opacity: 0; transition: opacity var(--t-med) var(--ease); }
+.shown .backdrop { opacity: 1; }
+.panel { position: absolute; background: var(--paper); display: flex; flex-direction: column; outline: none; transition: transform var(--t-med) var(--ease), opacity var(--t-med) var(--ease); }
+.right { top: 0; right: 0; bottom: 0; width: min(100%, var(--w, 420px)); border-left: 2px solid var(--ink); transform: translateX(100%); }
+.left { top: 0; left: 0; bottom: 0; width: min(100%, var(--w, 420px)); border-right: 2px solid var(--ink); transform: translateX(-100%); }
+.bottom { left: 0; right: 0; bottom: 0; max-height: 88dvh; border-radius: var(--radius-lg) var(--radius-lg) 0 0; box-shadow: var(--shadow-sheet); transform: translateY(100%); }
+.top { top: 0; left: 0; right: 0; max-height: 90dvh; border-bottom: 2px solid var(--ink); transform: translateY(-24px); opacity: 0; }
+.full { inset: 0; opacity: 0; transform: translateY(8px); }
+.shown .panel { transform: none; opacity: 1; }

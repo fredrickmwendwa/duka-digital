@@ -1,0 +1,4 @@
+.box { background: var(--surface); border: 1px solid var(--ink-3); border-radius: var(--radius); padding: 24px 20px; max-width: 520px; }
+.title { font: 700 20px/26px var(--font-text); }
+.text { margin-top: 6px; color: var(--ink-2); }
+.action { margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap; }

@@ -1,0 +1,9 @@
+.head { display: flex; justify-content: space-between; align-items: center; padding: 4px 4px 4px 20px; min-height: 56px; border-bottom: 2px solid var(--ink); }
+.head h2 { font: 700 18px/24px var(--font-text); }
+.head .mono { font-size: 13px; font-weight: 400; color: var(--ink-3); }
+.close { width: 44px; height: 44px; border: 0; background: none; font-size: 30px; line-height: 1; }
+.list { flex: 1; overflow-y: auto; padding: 0 20px; }
+.empty { padding: 20px; }
+.foot { border-top: 2px solid var(--ink); padding: 12px 20px calc(16px + var(--safe-bottom)); background: var(--paper); display: flex; flex-direction: column; gap: 8px; }
+.cta { margin-top: 6px; }
+.full { align-self: center; min-height: 36px; }

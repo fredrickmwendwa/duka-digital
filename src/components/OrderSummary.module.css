@@ -1,0 +1,13 @@
+.box { border-top: 2px solid var(--ink); padding-top: 16px; align-self: start; }
+.box :first-child { margin-bottom: 8px; }
+.row { display: flex; justify-content: space-between; gap: 12px; padding: 4px 0; font-size: 15px; line-height: 22px; }
+.num { font: 400 15px/22px var(--font-mono); white-space: nowrap; }
+.total { border-top: 2px solid var(--ink); margin-top: 8px; padding-top: 10px; align-items: baseline; font-weight: 700; }
+.total .price { font-size: 22px; line-height: 30px; }
+.disclosure { border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); margin-bottom: 16px; }
+.disclosure summary { display: flex; justify-content: space-between; align-items: center; min-height: 56px; cursor: pointer; list-style: none; }
+.disclosure summary::-webkit-details-marker { display: none; }
+.disclosure summary::after { content: '\25BE'; margin-left: 8px; transition: transform var(--t-fast); }
+.disclosure[open] summary::after { transform: rotate(180deg); }
+.disclosure summary .price { margin-left: auto; font-size: 16px; }
+.disclosure > div { padding-bottom: 12px; }

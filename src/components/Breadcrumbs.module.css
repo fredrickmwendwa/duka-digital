@@ -1,0 +1,5 @@
+.nav { font: 400 13px/18px var(--font-mono); color: var(--ink-3); padding-block: 16px; }
+.nav ol { display: flex; flex-wrap: wrap; }
+.nav a { text-decoration: underline; text-underline-offset: 3px; }
+.nav a:hover { color: var(--ink); }
+.sep { margin-inline: 8px; }

@@ -1,0 +1,15 @@
+.bar { display: flex; align-items: center; gap: 8px; padding: 8px 8px 8px 16px; border-bottom: 2px solid var(--ink); }
+.input { flex: 1; min-height: 48px; padding: 0 12px; border: 2px solid var(--cobalt); border-radius: var(--radius); background: var(--surface); font-size: 16px; }
+.input:focus-visible { outline: none; }
+.body { padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+.none { color: var(--ink-2); }
+.row { display: grid; grid-template-columns: 56px 1fr auto; gap: 12px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--rule); }
+.row:hover b { text-decoration: underline; }
+.row span:nth-child(2) { display: flex; flex-direction: column; min-width: 0; }
+.row b { font-weight: 500; line-height: 20px; }
+.row small { font: 12px/16px var(--font-mono); color: var(--ink-3); }
+.row .price { font-size: 15px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips button { min-height: 44px; padding: 0 14px; border: 1px solid var(--ink-3); border-radius: var(--radius); background: var(--surface); font-weight: 500; }
+.chips button:hover { border-color: var(--ink); }
+@media (min-width: 900px) { .bar, .body { max-width: 720px; width: 100%; margin-inline: auto; } .bar { border-bottom: 0; padding-top: 16px; } .body { padding-bottom: 24px; } }

@@ -1,0 +1,6 @@
+.group { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { min-width: 44px; min-height: 44px; padding: 0 12px; border: 1px solid var(--ink-3); border-radius: var(--radius); background: var(--surface); font: 500 14px/20px var(--font-text); transition: border-color var(--t-fast), background var(--t-fast); }
+.chip:hover:not(.off) { border-color: var(--ink); }
+.on { border: 2px solid var(--ink); font-weight: 700; padding: 0 11px; }
+.on::before { content: '\2713\00a0'; }
+.off { background: var(--sunk); color: var(--ink-3); text-decoration: line-through; cursor: not-allowed; }

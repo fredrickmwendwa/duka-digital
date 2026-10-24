@@ -1,0 +1,6 @@
+.bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: flex; flex-direction: column; gap: 6px; padding: 8px var(--pad) calc(8px + var(--safe-bottom)); background: var(--surface); border-top: 2px solid var(--ink); transition: transform var(--t-med) var(--ease); }
+.hide { transform: translateY(110%); }
+@media (min-width: 900px) {
+  .inline { position: static; padding: 0; background: none; border: 0; transform: none; }
+  .mobileOnly { display: none; }
+}

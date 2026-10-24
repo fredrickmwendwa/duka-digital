@@ -1,0 +1,8 @@
+.sk { background: var(--sunk); border-radius: 2px; animation: pulse 1.4s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: 0.55; } }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px 12px; }
+@media (min-width: 768px) { .grid { grid-template-columns: repeat(3, 1fr); gap: 40px 24px; } }
+.product { display: grid; gap: 24px; }
+.col { display: flex; flex-direction: column; gap: 8px; }
+@media (min-width: 768px) { .product { grid-template-columns: 1fr 1fr; gap: 32px; } }
+.line { display: grid; grid-template-columns: 72px 1fr; gap: 12px; padding: 12px 0; border-top: 1px solid var(--rule); }

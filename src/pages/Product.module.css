@@ -1,0 +1,31 @@
+.layout { display: grid; gap: 8px; align-items: start; padding-bottom: 8px; }
+.info { min-width: 0; }
+@media (min-width: 768px) { .layout { grid-template-columns: 1fr 1fr; gap: 32px; } }
+@media (min-width: 1024px) { .layout { grid-template-columns: minmax(0, 1fr) 440px; gap: 48px; } }
+.title { font: 700 28px/34px var(--font-text); letter-spacing: -0.015em; margin: 4px 0 8px; }
+@media (min-width: 768px) { .title { font-size: 32px; line-height: 38px; } }
+.priceRow { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.save { background: var(--ink); color: var(--paper); font: 700 11px/16px var(--font-mono); padding: 2px 6px; }
+.stock { font: 400 13px/18px var(--font-mono); margin-top: 6px; }
+.low { color: var(--warning); }
+.out { color: var(--error); }
+.ok { color: var(--ink-3); }
+.opt { margin-top: 24px; display: flex; flex-direction: column; gap: 8px; }
+.optHead { display: flex; justify-content: space-between; align-items: center; }
+.optHead .link { min-height: 32px; }
+.error { color: var(--error); font: 500 14px/20px var(--font-text); }
+.buy { display: flex; gap: 12px; align-items: center; margin: 24px 0 8px; }
+.add { flex: 1; min-width: 0; }
+.sticky { display: flex; gap: 8px; align-items: center; }
+.sticky .add { padding-inline: 12px; font-size: 15px; }
+.rows { margin: 24px 0 0; }
+.rows > div { display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-top: 1px solid var(--rule); font-size: 15px; line-height: 22px; }
+.rows dt { display: flex; flex-direction: column; margin: 0; }
+.rows dt span { color: var(--ink-3); }
+.rows dd { margin: 0; white-space: nowrap; }
+.details { border-top: 2px solid var(--ink); margin-top: 16px; padding-top: 12px; display: grid; gap: 6px; }
+.details p:not(.eyebrow) { color: var(--ink-2); }
+.fine { font-size: 14px; line-height: 20px; }
+.related { padding-block: 40px 0; }
+.relGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px 12px; margin-top: 16px; }
+@media (min-width: 900px) { .relGrid { grid-template-columns: repeat(4, 1fr); gap: 24px; } .related { padding-top: 64px; } }

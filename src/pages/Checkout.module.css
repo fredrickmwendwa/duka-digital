@@ -1,0 +1,15 @@
+.layout { display: grid; gap: 24px; }
+.form { min-width: 0; }
+.side { display: none; }
+.demo { background: var(--sunk); border-left: 4px solid var(--ink); padding: 10px 12px; font-size: 14px; line-height: 20px; margin-bottom: 16px; }
+.sec { font: 700 20px/26px var(--font-text); border-top: 2px solid var(--ink); padding-top: 12px; margin: 24px 0 16px; }
+.fulfil { margin-bottom: 16px; }
+.collect { background: var(--surface); border: 1px solid var(--rule); padding: 12px; margin-bottom: 16px; font-size: 15px; }
+.errBox { border: 2px solid var(--error); background: var(--surface); padding: 12px 16px; border-radius: var(--radius); margin-bottom: 8px; outline: none; }
+.errBox b { color: var(--error); }
+.errBox li .link { min-height: 36px; text-align: left; }
+.errBox p { font-size: 13px; color: var(--ink-3); }
+@media (min-width: 900px) {
+  .layout { grid-template-columns: minmax(0, 560px) minmax(0, 360px); gap: 96px; justify-content: center; }
+  .side { display: block; position: sticky; top: 24px; align-self: start; }
+}

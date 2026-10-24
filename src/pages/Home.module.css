@@ -1,0 +1,20 @@
+.hero { display: grid; gap: 24px; padding-block: 24px 16px; align-items: center; }
+.copy h1 { font: 700 34px/38px var(--font-text); letter-spacing: -0.02em; margin: 6px 0 12px; }
+.lead { color: var(--ink-2); max-width: 440px; margin-bottom: 20px; }
+.cta { display: flex; gap: 12px; flex-wrap: wrap; }
+@media (min-width: 900px) { .hero { grid-template-columns: 1.1fr 1fr; gap: 48px; padding-block: 56px; } .copy h1 { font-size: 56px; line-height: 58px; margin-top: 12px; } }
+.cats { border-top: 2px solid var(--ink); }
+.catRow { display: flex; gap: 20px; overflow-x: auto; scrollbar-width: none; padding-block: 4px; }
+.catRow::-webkit-scrollbar { display: none; }
+.catRow a { white-space: nowrap; min-height: 44px; display: inline-flex; align-items: center; gap: 6px; font-weight: 500; }
+.catRow a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.catRow .mono { font-size: 13px; color: var(--ink-3); }
+@media (min-width: 900px) { .catRow { gap: 32px; } }
+.section { padding-block: 32px 8px; }
+.sectionHead { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px 12px; }
+@media (min-width: 900px) { .section { padding-top: 56px; } .grid { grid-template-columns: repeat(4, 1fr); gap: 32px 24px; } }
+.info { margin-top: 40px; background: var(--sunk); border-top: 2px solid var(--ink); padding-block: 24px; }
+.infoGrid { display: grid; gap: 20px; }
+.infoGrid p:last-child { font-size: 15px; line-height: 22px; color: var(--ink-2); margin-top: 4px; }
+@media (min-width: 768px) { .infoGrid { grid-template-columns: repeat(3, 1fr); gap: 32px; } .info { padding-block: 40px; } }

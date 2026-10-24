@@ -1,0 +1,17 @@
+.layout { display: grid; gap: 24px; }
+.main { min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--surface); border: 1px solid var(--ink-3); border-radius: var(--radius); padding: 16px; font: 400 14px/22px var(--font-mono); }
+.note { font-size: 14px; line-height: 20px; }
+.actions { display: flex; flex-direction: column; gap: 12px; }
+.edit { align-self: flex-start; }
+.desk { display: none; font-size: 14px; line-height: 20px; color: var(--ink-2); }
+.prompt { border: 1px solid var(--ink-3); border-left: 4px solid var(--cobalt); background: var(--surface); padding: 12px 16px; animation: in var(--t-med) var(--ease) both; }
+.prompt p { font-size: 14px; line-height: 20px; margin: 4px 0 10px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; }
+@keyframes in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (min-width: 900px) {
+  .layout { grid-template-columns: minmax(0, 560px) minmax(0, 360px); gap: 96px; justify-content: center; }
+  .actions { padding-top: 50px; border-top: 0; }
+  .desk { display: block; }
+  .actions > div:first-child { border-top: 2px solid var(--ink); padding-top: 16px; display: flex; flex-direction: column; gap: 12px; }
+}

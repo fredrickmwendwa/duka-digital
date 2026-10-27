@@ -41,3 +41,13 @@ button { cursor: pointer; }
 
 .mobileOnly { display: block; }
 @media (min-width: 900px) { .mobileOnly { display: none; } }
+
+/* Receipt ticket: dashed edge with punched notches (the Counter brand motif) */
+.ticket { position: relative; background: var(--surface); border-block: 2px dashed var(--ink); }
+.ticket::before, .ticket::after { content: ''; position: absolute; top: 50%; width: 20px; height: 20px; margin-top: -10px; border-radius: 50%; background: var(--ticket-bg); }
+.ticket::before { left: -10px; }
+.ticket::after { right: -10px; }
+
+/* Animated underline link */
+.ulink { background: linear-gradient(currentColor, currentColor) left bottom / 0 2px no-repeat; transition: background-size 0.4s var(--ease-out); padding-bottom: 2px; }
+.ulink:hover, .ulink:focus-visible { background-size: 100% 2px; }

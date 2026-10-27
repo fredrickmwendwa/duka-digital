@@ -1,0 +1,12 @@
+.marquee { overflow: hidden; white-space: nowrap; }
+.track { display: flex; width: max-content; animation: run var(--dur, 40s) linear infinite; }
+.marquee:hover .track { animation-play-state: paused; }
+.track ul { display: flex; flex: none; }
+.track li { display: inline-flex; align-items: center; }
+.track li::after { content: '/'; padding-inline: 1.2em; opacity: 0.55; }
+@keyframes run { to { transform: translateX(-50%); } }
+.outline { font: 700 clamp(48px, 9vw, 112px) / 1.1 var(--font-text); letter-spacing: -0.03em; text-transform: uppercase; }
+.outline li { color: transparent; -webkit-text-stroke: 1.5px var(--ink); }
+.outline li:nth-child(3n) { color: var(--ink); -webkit-text-stroke: 0; }
+.outline li::after { content: '\2736'; -webkit-text-stroke: 0; color: var(--cobalt); font-size: 0.4em; padding-inline: 0.8em; opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .track { animation: none; } .track ul[aria-hidden] { display: none; } .marquee { text-align: center; overflow-x: auto; } }

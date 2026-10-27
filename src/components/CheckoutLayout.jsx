@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import Toasts from './Toasts';
+import RouteProgress from './RouteProgress';
 import { Monogram } from './Logo';
 import { config } from '../config';
 import { useRouteFocus } from '../hooks/useRouteFocus';
@@ -18,6 +19,7 @@ export default function CheckoutLayout() {
   const [backTo, backLabel] = back[pathname] || ['/cart', 'Cart'];
   return (
     <>
+      <RouteProgress />
       <a href="#main" className="srOnly">Skip to content</a>
       <header className={styles.header}>
         <div className={`container ${styles.row}`}>
@@ -29,6 +31,7 @@ export default function CheckoutLayout() {
             ))}
           </nav>
         </div>
+      <div className={styles.progress} aria-hidden="true"><i style={{ transform: `scaleX(${(current + 1) / 3})` }} /></div>
       </header>
       <main id="main" ref={main} tabIndex={-1} className={styles.main}>
         <div key={pathname} className="page container"><Outlet /></div>

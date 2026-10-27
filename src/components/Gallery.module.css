@@ -16,3 +16,8 @@
   .dots { display: none; }
 }
 @media (min-width: 1024px) { .single { grid-template-columns: minmax(0, 1fr); } }
+@media (hover: hover) and (min-width: 1024px) {
+  .slide { cursor: zoom-in; --zx: 50%; --zy: 50%; }
+  .slide :global(img) { transition: transform 0.6s var(--ease-out), opacity 0.7s var(--ease-out); transform-origin: var(--zx) var(--zy); }
+  .slide:hover :global(.ready img), .slide:hover :global(img) { transform: scale(1.9); }
+}

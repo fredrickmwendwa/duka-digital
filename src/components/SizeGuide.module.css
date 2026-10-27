@@ -1,0 +1,9 @@
+.head { display: flex; justify-content: space-between; align-items: center; padding: 4px 4px 4px 20px; min-height: 56px; border-bottom: 2px solid var(--ink); }
+.head h2 { font: 700 20px/26px var(--font-text); }
+.close { width: 44px; height: 44px; border: 0; background: none; font-size: 30px; line-height: 1; }
+.body { padding: 20px; display: grid; gap: 16px; }
+table { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: 15px; }
+th, td { text-align: left; padding: 12px 8px; border-bottom: 1px solid var(--rule); }
+thead th { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); border-bottom: 2px solid var(--ink); }
+.on { background: var(--sunk); font-weight: 700; }
+.fine { font-size: 13px; line-height: 18px; color: var(--ink-3); }

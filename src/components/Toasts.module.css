@@ -6,3 +6,6 @@
 .error .act { color: #fff; }
 @keyframes in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 @media (min-width: 900px) { .region { left: auto; right: 32px; top: 80px; bottom: auto; width: 380px; } }
+.toast { position: relative; overflow: hidden; }
+.timer { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: var(--cobalt-lt); transform-origin: left; animation: drain linear forwards; }
+@keyframes drain { to { transform: scaleX(0); } }

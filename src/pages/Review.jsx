@@ -44,7 +44,7 @@ export default function Review() {
       <div className={styles.main}>
         <h1 className="pageTitle">Review your order</h1>
         <p className="eyebrow">Message preview</p>
-        <pre ref={pre} className={styles.pre} tabIndex={0} aria-label="WhatsApp message preview">{message}</pre>
+        <div className={styles.receipt}><pre ref={pre} className={styles.pre} tabIndex={0} aria-label="WhatsApp message preview">{message}</pre><span className={styles.tear} aria-hidden="true" /></div>
         <p className={styles.note}><b>Your order is not sent yet.</b> Press Send in WhatsApp to place it.</p>
       </div>
       <div className={styles.actions}>

@@ -11,6 +11,12 @@ export default function Gallery({ product, colour }) {
     const el = strip.current;
     setIndex(Math.round(el.scrollLeft / el.clientWidth));
   };
+  const zoom = (e) => {
+    if (!window.matchMedia('(hover: hover) and (min-width: 1024px)').matches) return;
+    const r = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty('--zx', `${((e.clientX - r.left) / r.width) * 100}%`);
+    e.currentTarget.style.setProperty('--zy', `${((e.clientY - r.top) / r.height) * 100}%`);
+  };
   const goTo = (i) => strip.current?.scrollTo({ left: i * strip.current.clientWidth, behavior: 'smooth' });
   const alt = (i) => `${product.name}, ${colour}, photo ${i + 1} of ${product.images.length}`;
   return (
@@ -25,7 +31,7 @@ export default function Gallery({ product, colour }) {
       <div className={styles.stage}>
         <div ref={strip} className={styles.strip} onScroll={onScroll} tabIndex={0} role="group" aria-roledescription="carousel" aria-label="Product photos, swipe or use arrow keys">
           {product.images.map((src, i) => (
-            <div key={i} className={styles.slide}><Picture src={src} alt={alt(i)} tone={tone} eager={i === 0} caption={i === 0 ? '' : ''} /></div>
+            <div key={i} className={styles.slide} onMouseMove={zoom}><Picture src={src} alt={alt(i)} tone={tone} eager={i === 0} caption={i === 0 ? '' : ''} /></div>
           ))}
         </div>
         {product.images.length > 1 && <div className={styles.dots} aria-hidden="true">{product.images.map((_, i) => <i key={i} className={index === i ? styles.dotOn : ''} />)}</div>}

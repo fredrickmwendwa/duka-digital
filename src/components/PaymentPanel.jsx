@@ -36,6 +36,7 @@ export default function PaymentPanel({ total, reference, reported, onReportedCha
         <span>I have sent the payment</span>
       </label>
       <p className={styles.fine}>This website cannot see your payment. The shop checks it and confirms on WhatsApp.</p>
+    <span className={styles.tear} aria-hidden="true" />
     </section>
   );
 }

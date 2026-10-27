@@ -11,8 +11,8 @@ export function UIProvider({ children }) {
 
   const toast = useCallback((message, { tone = 'info', action, duration } = {}) => {
     const id = nextId.current++;
-    setToasts((t) => [...t.slice(-2), { id, message, tone, action }]);
     const ms = duration ?? (tone === 'error' ? 0 : 4000);
+    setToasts((t) => [...t.slice(-2), { id, message, tone, action, ms }]);
     if (ms) setTimeout(() => dismiss(id), ms);
     return id;
   }, [dismiss]);

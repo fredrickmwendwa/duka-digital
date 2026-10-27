@@ -36,7 +36,7 @@ More desktop screens: [product](screenshots/d-product.png), [cart](screenshots/d
 - **M-Pesa simulation:** Till or Paybill (configurable), exact amount, order reference, copy buttons with a manual fallback, numbered steps, "I have sent the payment" only changes the message to "reported by customer, not verified".
 - **WhatsApp handoff:** previewable message with items, variants, line prices, subtotal, delivery, total, address or collection point, payment status and note, built into a URL-encoded `wa.me` link. After the click it asks "Did WhatsApp open?" and never claims the order was sent.
 - **States:** skeleton loaders, empty cart, no results, 404, unavailable items, error toasts, saved-checkout "Welcome back" banner.
-- **Motion:** subtle page, drawer, sheet, toast and button transitions. Everything is disabled under `prefers-reduced-motion`.
+- **Motion:** line-by-line headline reveal, hero curtain and parallax, scroll-triggered reveals, marquee tickers, auto-hiding header, image shimmer and zoom-settle, button fill sweeps, card hover reveals, product zoom, a fly-to-cart thumbnail, animated totals, accordion and drawer transitions, a route progress bar and receipt-style tickets. All of it respects `prefers-reduced-motion`, and it uses no animation library (CSS, `IntersectionObserver` and the Web Animations API).
 - **Accessibility:** skip link, focus moved to `<main>` on navigation, focus-trapped dialogs that restore focus, labelled controls, `aria-live` feedback, visible focus rings, 44px touch targets.
 
 ## Tech stack

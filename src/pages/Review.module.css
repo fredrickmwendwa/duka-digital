@@ -15,3 +15,7 @@
   .desk { display: block; }
   .actions > div:first-child { border-top: 2px solid var(--ink); padding-top: 16px; display: flex; flex-direction: column; gap: 12px; }
 }
+.receipt { position: relative; margin-bottom: 10px; animation: slip 0.7s var(--ease-out) both; }
+.receipt .pre { border: 0; border-top: 2px dashed var(--ink); border-radius: 0; }
+.tear { position: absolute; left: 0; right: 0; bottom: -10px; height: 10px; background: linear-gradient(135deg, var(--surface) 50%, transparent 50%) 0 0 / 14px 10px repeat-x, linear-gradient(225deg, var(--surface) 50%, transparent 50%) 0 0 / 14px 10px repeat-x; }
+@keyframes slip { from { opacity: 0; transform: translateY(24px) rotate(-0.6deg); } to { opacity: 1; transform: none; } }

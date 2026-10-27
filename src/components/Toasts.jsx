@@ -6,12 +6,13 @@ export default function Toasts() {
   return (
     <div className={styles.region} aria-live="polite" aria-atomic="false">
       {toasts.map((t) => (
-        <div key={t.id} className={`${styles.toast} ${t.tone === 'error' ? styles.error : ''}`} role={t.tone === 'error' ? 'alert' : 'status'}>
+        <div key={t.id} style={{ '--i': 0 }} className={`${styles.toast} ${t.tone === 'error' ? styles.error : ''}`} role={t.tone === 'error' ? 'alert' : 'status'}>
           <span>{t.message}</span>
           <span className={styles.actions}>
             {t.action && <button type="button" className={styles.act} onClick={() => { t.action.onClick(); dismiss(t.id); }}>{t.action.label}</button>}
             {t.tone === 'error' && <button type="button" className={styles.act} onClick={() => dismiss(t.id)} aria-label="Dismiss">&times;</button>}
           </span>
+          {t.ms > 0 && <i className={styles.timer} style={{ animationDuration: `${t.ms}ms` }} />}
         </div>
       ))}
     </div>

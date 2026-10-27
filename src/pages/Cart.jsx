@@ -8,6 +8,7 @@ import StickyBar from '../components/StickyBar';
 import { LineSkeleton } from '../components/Skeletons';
 import { useOrder } from '../hooks/useOrder';
 import { useSimulatedLoad } from '../hooks/useSimulatedLoad';
+import Money from '../components/Money';
 import { formatKSh, plural } from '../utils/format';
 import { config } from '../config';
 import styles from './Cart.module.css';
@@ -41,7 +42,7 @@ export default function Cart() {
             <p className={styles.fine}>You pay with M-Pesa next. Nothing is charged on this site. Demo store.</p>
           </aside>
           <StickyBar>
-            <div className={styles.bar}><b>Total</b><span className="price">{formatKSh(totals.total)}</span></div>
+            <div className={styles.bar}><b>Total</b><Money value={totals.total} className="price" /></div>
             {checkoutBtn()}
           </StickyBar>
         </div>

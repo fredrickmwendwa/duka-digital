@@ -1,4 +1,12 @@
-.titleRow { display: flex; flex-direction: column; gap: 16px; margin-bottom: 16px; }
+.titleRow { display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px; }
+.h1 { font: 700 clamp(44px, 10vw, 88px) / 0.95 var(--font-text); letter-spacing: -0.04em; margin-top: 6px; }
+.h1 sup { font-size: 14px; font-weight: 400; letter-spacing: 0; vertical-align: super; margin-left: 8px; color: var(--cobalt); }
+.chips { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; margin: 0 calc(var(--pad) * -1) 20px; padding: 0 var(--pad) 4px; }
+.chips::-webkit-scrollbar { display: none; }
+.chips a { position: relative; flex: none; min-height: 44px; display: inline-flex; align-items: center; padding: 0 18px; border: 1.5px solid var(--ink); border-radius: 22px; font-weight: 500; transition: background 0.3s var(--ease-out), color 0.3s, transform 0.2s; }
+.chips a:hover { background: var(--sunk); }
+.chips a:active { transform: scale(0.96); }
+.chips .chipOn { background: var(--ink); color: var(--paper); }
 .search { position: relative; }
 .search input { width: 100%; min-height: 48px; padding: 0 44px 0 12px; border: 1px solid var(--ink-3); border-radius: var(--radius); background: var(--surface); font-size: 16px; }
 .clearQ { position: absolute; right: 0; top: 0; width: 48px; height: 48px; border: 0; background: none; font-size: 24px; }
